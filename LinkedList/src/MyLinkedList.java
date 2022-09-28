@@ -1,6 +1,6 @@
 import java.util.ListIterator;
 
-public class LinkedList {
+public class MyLinkedList {
     private Node head;
     private Node tail;
     private int size = 0;
@@ -127,10 +127,10 @@ public class LinkedList {
         }
         // next는 현재 가리키고 있는 다음 노드를 가르키게 되고, 기존에 가리키고 있던 노드(lastReturned)를 return
         public Object next(){
-           lastReturned = next;
-           next = next.next;
-           nextIndex++;
-           return lastReturned.data;
+            lastReturned = next;
+            next = next.next;
+            nextIndex++;
+            return lastReturned.data;
         }
         public boolean hasNext(){
             return nextIndex < size();
@@ -153,8 +153,9 @@ public class LinkedList {
             if(nextIndex == 0){
                 throw new IllegalStateException();
             }
-            LinkedList.this.remove(nextIndex-1);
+            MyLinkedList.this.remove(nextIndex-1);
             nextIndex--;
         }
     }
 }
+
